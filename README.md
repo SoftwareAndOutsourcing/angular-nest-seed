@@ -1,6 +1,13 @@
 # Angular-Nest Seed
 
 ## Angular
-- SCSS 
+- SCSS.
 
 ## Nest
+- Sequelize.
+- Swagger UI in `/api`.
+
+
+### Configuration
+
+Copy `.env.sample` to `.env` and fill values.
