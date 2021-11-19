@@ -1,0 +1,17 @@
+<h1>Cats</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>breed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cat of cats">
+      <td>{{ cat.name }}</td>
+      <td>{{ cat.age }}</td>
+      <td>{{ cat.breed }}</td>
+    </tr>
+  </tbody>
+</table>

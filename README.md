@@ -2,11 +2,11 @@
 
 ## Angular
 - SCSS.
+- Sample component in `/cats`.
 
 ## Nest
 - Sequelize.
 - Swagger UI in `/api`.
-
 
 ### Configuration
 

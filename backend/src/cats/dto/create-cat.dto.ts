@@ -1,12 +1,14 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-export class CreateCatDto {
-   @ApiProperty()
-   name: string;
+import { Cat } from '../../../../shared/types';
 
-   @ApiProperty()
-   age: number;
+export class CreateCatDto implements Cat {
+  @ApiProperty()
+  name: string;
 
-   @ApiProperty()
-   breed: string;
+  @ApiProperty()
+  age: number;
+
+  @ApiProperty()
+  breed: string;
 }
