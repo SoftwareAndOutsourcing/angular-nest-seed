@@ -1,7 +1,5 @@
 import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { CatsModule } from './cats/cats.module';
 require('dotenv').config()
 
@@ -19,7 +17,7 @@ require('dotenv').config()
     }),
     CatsModule
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: []
 })
 export class AppModule { }
