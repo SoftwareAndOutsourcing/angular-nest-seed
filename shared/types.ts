@@ -3,3 +3,5 @@ export interface Cat {
   age: number;
   breed: string;
 }
+
+export type Dog = Cat;
