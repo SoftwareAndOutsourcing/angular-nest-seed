@@ -1,7 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
-import { AppModule } from './app.module';
-import config from 'dotenv'
+import { AppModule, enabledAPINames } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -9,11 +8,11 @@ async function bootstrap() {
   const config = new DocumentBuilder()
     .setTitle('Animals example')
     .setDescription('The animals API description')
-    .setVersion('1.0')
-    .addTag('cats')
-    .addTag('dogs')
-    .build();
-  const document = SwaggerModule.createDocument(app, config);
+    .setVersion('1.0');
+  for (const enabledAPIName of enabledAPINames) {
+    config.addTag(enabledAPIName);
+  }
+  const document = SwaggerModule.createDocument(app, config.build());
 
   SwaggerModule.setup('api', app, document);
 
