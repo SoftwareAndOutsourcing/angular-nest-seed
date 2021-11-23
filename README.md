@@ -11,3 +11,6 @@
 ### Configuration
 
 Copy `.env.sample` to `.env` and fill values.
+
+For `ENABLED_APIS` use a comma-separated list of API names like `cats,dogs`.
+
