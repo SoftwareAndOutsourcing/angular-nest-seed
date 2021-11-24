@@ -9,10 +9,11 @@ const availableApiModules: Map<string, Function> = new Map([
   ['dogs', DogsModule]
 ]);
 
-const getAPIModules = () => {
-  const enabledAPINames = process.env.ENABLED_APIS
-    .split(',')
-    .map(s => s.trim());
+export const enabledAPINames = process.env.ENABLED_APIS
+  .split(',')
+  .map(s => s.trim());
+
+const getEnabledAPIModules = () => {
   const apiModules = [];
   for (const enabledAPIName of enabledAPINames) {
     const apiModule = availableApiModules.get(enabledAPIName);
@@ -37,7 +38,7 @@ const getAPIModules = () => {
       autoLoadModels: true,
       synchronize: true
     }),
-    ...getAPIModules()
+    ...getEnabledAPIModules()
   ],
   controllers: [],
   providers: []
