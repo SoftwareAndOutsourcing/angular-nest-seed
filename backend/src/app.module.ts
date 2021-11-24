@@ -28,7 +28,7 @@ const getAPIModules = () => {
 @Module({
   imports: [
     SequelizeModule.forRoot({
-      dialect: 'mysql',
+      dialect: 'mssql',
       host: process.env.MYSQL_HOST,
       port: +process.env.MYSQL_PORT,
       username: process.env.MYSQL_USER,
