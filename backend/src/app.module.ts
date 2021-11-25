@@ -1,8 +1,10 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { CatsModule } from './cats/cats.module';
 import { DogsModule } from './dogs/dogs.module';
-require('dotenv').config()
+import config from './config/config';
+require('dotenv').config();
 
 const availableApiModules: Map<string, Function> = new Map([
   ['cats', CatsModule],
@@ -28,6 +30,9 @@ const getEnabledAPIModules = () => {
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      load: [config],
+    }),
     SequelizeModule.forRoot({
       dialect: 'mysql',
       host: process.env.MYSQL_HOST,
